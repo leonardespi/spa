@@ -1,187 +1,185 @@
-# Sistema de Pensamiento y Acción (SPA)
-
+# System for Thought and Action (SPA)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
+[![en](https://img.shields.io/badge/lang-en-informational)](README.md)
+[![es](https://img.shields.io/badge/lang-es-success)](docs/README.es.md)
 
-## Índice
+## Table of Contents
 
-1. [Descripción General](#descripción-general)
-2. [¿Por qué usar SPA?](#por-qué-usar-spa)
-3. [Objetivo del Sistema](#objetivo-del-sistema)
-4. [Audiencia](#audiencia)
-5. [Ventajas y Beneficios](#ventajas-y-beneficios)
-6. [Requisitos y Herramientas](#requisitos-y-herramientas)
-7. [Arquitectura General](#arquitectura-general)
-8. [Ejemplo Básico de Uso](#ejemplo-básico-de-uso)
-9. [Convenciones Internas](#convenciones-internas)
-10. [Componentes del Sistema](#componentes-del-sistema)
-11. [Workflow: Cómo funciona el sistema en conjunto](#workflow-cómo-funciona-el-sistema-en-conjunto)
-12. [Proceso de Revisión](#proceso-de-revisión)
-13. [Licencia](#licencia)
-
----
-
-## Descripción General
-
-El **Sistema de Pensamiento y Acción (SPA)** es una arquitectura modular para la organización personal, que integra la gestión del conocimiento, la planificación de objetivos y la ejecución de tareas. A diferencia de otros sistemas, SPA permite la creación de nuevo conocimiento a través de la fusión y maduración de ideas provenientes de distintas áreas vitales.
-
-Está diseñado como una red funcional de componentes que interactúan de forma jerárquica y bidireccional, desde el pensamiento profundo hasta la acción cotidiana, pasando por un proceso constante de iteración.
+1. [Overview](#overview)
+2. [Why use SPA?](#why-use-spa)
+3. [System Goal](#system-goal)
+4. [Audience](#audience)
+5. [Advantages & Benefits](#advantages--benefits)
+6. [Requirements & Tools](#requirements--tools)
+7. [High-level Architecture](#high-level-architecture)
+8. [Basic Usage Example](#basic-usage-example)
+9. [Internal Conventions](#internal-conventions)
+10. [System Components](#system-components)
+11. [Workflow: How the system works end-to-end](#workflow-how-the-system-works-end-to-end)
+12. [Review Process](#review-process)
+13. [License](#license)
+14. [Authors](#authors)
 
 ---
 
-## ¿Por qué usar SPA?
+## Overview
 
-- Conecta lo que sabes con lo que haces.
-- Organiza ideas, experiencias y aprendizajes en una red viva.
-- Transforma conocimiento en objetivos concretos y tareas ejecutables.
-- Permite descubrir relaciones entre áreas aparentemente no conectadas.
-- Está diseñado para ser adaptado, iterado y compartido.
+The **System for Thought and Action (SPA)** is a modular architecture for personal organization that integrates knowledge management, goal planning, and task execution. Unlike other systems, SPA enables the creation of new knowledge by fusing and maturing ideas that come from different life areas.
+
+It is designed as a functional network of components that interact both hierarchically and bidirectionally—from deep thinking to everyday action—through a continuous process of iteration.
 
 ---
 
-## Objetivo del Sistema
+## Why use SPA?
 
-El objetivo de SPA es facilitar la **traducción de conocimiento personal en resultados tangibles** mediante objetivos definidos y tareas organizadas, partiendo desde un núcleo identitario y guiado por áreas clave en la vida de cada individuo.
-
----
-
-## Audiencia
-
-SPA está dirigido a cualquier persona interesada en mejorar su productividad personal. Es especialmente útil para quienes ya tienen familiaridad con metodologías como GTD, PARA, Zettelkasten, metodologías ágiles o sistemas de gestión personal.
+- Connects what you know with what you do.
+- Organizes ideas, experiences, and learnings into a living network.
+- Translates knowledge into concrete goals and executable tasks.
+- Helps uncover relationships between seemingly unrelated areas.
+- Designed to be adapted, iterated on, and shared.
 
 ---
 
-## Ventajas y Beneficios
+## System Goal
 
-- Estructura modular tipo microservicios.
-- Compatible con herramientas multiplataforma.
-- Favorece la autoconciencia y la reflexión estructurada.
-- Integra captura rápida, conocimiento profundo y acción programada.
-- Flexible para artistas, ingenieros, estudiantes, escritores, emprendedores y más.
+SPA’s goal is to facilitate the **translation of personal knowledge into tangible outcomes** via defined goals and organized tasks—starting from an identity core and guided by key areas in each individual’s life.
 
 ---
 
-## Requisitos y Herramientas
+## Audience
 
-SPA no depende de herramientas específicas, pero se recomienda el siguiente stack:
-
-| Componente | Herramienta recomendada | Función |
-|-----------|--------------------------|--------|
-| Vault de conocimiento | Obsidian | Gestión estructurada de ideas y proyectos |
-| Tareas estilo Kanban | Google Tasks (o Trello, Jira) | Seguimiento de tareas y objetivos |
-| Calendario de time boxing | Google Calendar | Distribución diaria del tiempo y hábitos |
-| Captura rápida / RAM | Google Keep | Registro ágil de ideas e información frecuente |
-
-Otras herramientas pueden ser utilizadas si ofrecen funcionalidades equivalentes (vista de grafo, columnas kanban, integración de calendario, etc.).
+SPA is intended for anyone seeking to improve personal productivity. It is especially useful if you’re already familiar with methodologies such as GTD, PARA, Zettelkasten, agile methods, or other personal management systems.
 
 ---
 
-## Arquitectura General
+## Advantages & Benefits
 
-SPA funciona como una arquitectura por capas:
-
-1. **Vault de Conocimiento (Capa profunda)**  
-   Bóveda de ideas, aprendizajes, referencias y reflexiones. Aquí se definen:
-   - Áreas de vida (e.g., salud, trabajo, arte)
-   - Proyectos personales
-   - Dominios de conocimiento que emergen con madurez
-
-2. **Tareas (Capa intermedia)**  
-   Las ideas se traducen en objetivos, y estos en tareas específicas.
-   - Formato ágil con columnas: `To Do`, `In Progress`, `Blocked`, `Backlog`, `Projects`
-   - Estimaciones tipo talla de playera (S, M, L, XL)
-
-3. **Calendar (Capa de planificación)**  
-   Utiliza las tareas, dominios y hábitos para crear bloques de tiempo en el calendario.
-
-4. **Keep (Capa de memoria rápida y cache)**  
-   - Guarda información crítica de uso recurrente (staff, contraseñas, claves)
-   - Almacena ideas inmaduras antes de entrar al vault
-   - Traduce conocimiento clave en bullets de acción rápida
+- Modular, microservice-like structure.
+- Compatible with cross‑platform tools.
+- Encourages self‑awareness and structured reflection.
+- Integrates quick capture, deep knowledge, and scheduled action.
+- Flexible for artists, engineers, students, writers, entrepreneurs, and more.
 
 ---
 
-## Ejemplo Básico de Uso
+## Requirements & Tools
+
+SPA is tool‑agnostic, but the following stack is recommended:
+
+| Component                | Recommended Tool           | Purpose                                              |
+|-------------------------|----------------------------|------------------------------------------------------|
+| Knowledge vault         | Obsidian                   | Structured management of ideas and projects          |
+| Kanban‑style tasks      | Google Tasks (or Trello, Jira) | Task and goal tracking                           |
+| Time‑boxing calendar    | Google Calendar            | Daily time distribution and habits                   |
+| Quick capture / RAM     | Google Keep                | Fast logging of ideas and frequently used info       |
+
+Other tools can be used if they provide equivalent functionality (graph view, Kanban columns, calendar integration, etc.).
+
+---
+
+## High-level Architecture
+
+SPA works as a layered architecture:
+
+1. **Knowledge Vault (Deep layer)**  
+   A repository of ideas, learnings, references, and reflections. Define here:  
+   - Life areas (e.g., health, work, art)  
+   - Personal projects  
+   - Knowledge domains that emerge as they mature
+
+2. **Tasks (Intermediate layer)**  
+   Ideas are translated into goals, and goals into specific tasks.  
+   - Agile‑style columns: `To Do`, `In Progress`, `Blocked`, `Backlog`, `Projects`  
+   - T‑shirt size estimates (`S`, `M`, `L`, `XL`)
+
+3. **Calendar (Planning layer)**  
+   Uses tasks, domains, and habits to create time blocks in the calendar.
+
+4. **Keep (Fast memory / cache layer)**  
+   - Stores critical, frequently used information (staff, passwords, keys)  
+   - Holds immature ideas before they enter the vault  
+   - Translates key knowledge into quick‑action bullets
+
+---
+
+## Basic Usage Example
 
 ```
-1. Comienzas con un nodo “core” que define quién eres.
-2. Defines un área de tu vida: “Salud física”.
-3. Dentro del área, creas un proyecto: “Correr un medio maratón”.
-4. Este proyecto se registra en Tasks → columna “Projects”.
-5. Desglosas tareas (entrenamientos, compra de equipo) → se colocan en Tasks con tallas.
-6. Estas tareas se calendarizan en bloques diarios en Google Calendar.
-7. En Keep guardas las rutas, entrenamientos, o suplementos frecuentes para consulta rápida.
-8. Con el tiempo, ese proyecto puede convertirse en un dominio: “Carrera de fondo”.
+1. Start with a “core” node that defines who you are.
+2. Define a life area: “Physical Health.”
+3. Within that area, create a project: “Run a half marathon.”
+4. Register the project in Tasks → “Projects” column.
+5. Break down tasks (training sessions, gear purchase) → put them in Tasks with sizes.
+6. Add these tasks to your calendar as daily time blocks in Google Calendar.
+7. Store routes, workouts, or frequently used supplements in Keep for quick reference.
+8. Over time, that project can evolve into a domain: “Endurance Running.”
 ```
 
 ---
 
-## Convenciones Internas
+## Internal Conventions
 
-- **Area - X** → Núcleo vital (Ej: `Area - Salud`)
-- **Domain - X** → Especialización (Ej: `Domain - Nutrición`)
-- **Project - X** → Aplicación o iniciativa concreta
-- Estimaciones en tareas: `S`, `M`, `L`, `XL` (pueden reemplazarse por puntos, jelly beans, etc.)
+- **Area - X** → Core life area (e.g., `Area - Health`)  
+- **Domain - X** → Specialization (e.g., `Domain - Nutrition`)  
+- **Project - X** → Concrete application or initiative  
+- Task estimates: `S`, `M`, `L`, `XL` (can be replaced by points, jelly beans, etc.)
 
 ---
 
-## Componentes del Sistema
+## System Components
 
 ### 1. Vault (`/vault`)
-- Organiza el conocimiento en notas markdown enlazadas.
-- Soporta conexiones entre áreas, proyectos y dominios.
-- Idealmente gestionado con vista de grafo (Obsidian).
+- Organizes knowledge in linked Markdown notes.
+- Supports connections between areas, projects, and domains.
+- Ideally managed with a graph view (Obsidian).
 
 ### 2. Tasks (`/tasks`)
-- Sistema Kanban personal.
-- Estructura recomendada: `To Do`, `In Progress`, `Blocked`, `Backlog`, `Projects`.
-- Incluye estimaciones por carga.
+- Personal Kanban system.
+- Recommended structure: `To Do`, `In Progress`, `Blocked`, `Backlog`, `Projects`.
+- Includes workload estimates.
 
 ### 3. Calendar (`/calendar`)
-- Implementa Time Boxing.
-- Aloja hábitos, sesiones de trabajo profundo y revisiones.
+- Implements Time Boxing.
+- Hosts habits, deep‑work sessions, and reviews.
 
 ### 4. Keep (`/keep`)
-- Micro RAM del sistema.
-- Funciona como entrada/salida del vault para datos rápidos.
+- System micro‑RAM.
+- Acts as an entry/exit buffer for the vault to handle quick data.
 
 ---
 
-## Workflow: Cómo funciona el sistema en conjunto
+## Workflow: How the system works end-to-end
 
 ```
-→ Keep: captura rápida de ideas →  
-→ Vault: organiza, madura y conecta esas ideas en áreas, dominios y proyectos →  
-→ Tasks: convierte ideas en acciones estimadas y organizadas →  
-→ Calendar: agenda la ejecución de esas acciones en bloques de tiempo →  
-↻ Revisión: retroalimenta todo el sistema con aprendizajes.
+→ Keep: quick capture of ideas →  
+→ Vault: organize, mature, and connect those ideas into areas, domains, and projects →  
+→ Tasks: turn ideas into estimated, organized actions →  
+→ Calendar: schedule those actions as time blocks →  
+↻ Review: feed learnings back into the entire system.
 ```
 
 ---
 
-## Proceso de Revisión
+## Review Process
 
-Cada semana o ciclo, se realiza una “revisión de sprint”, que incluye:
-- Reflexión sobre tareas completadas vs. bloqueadas
-- Ajuste de objetivos y estimaciones
-- Actualización del vault con aprendizajes relevantes
-- Redistribución de tiempo en el calendario
+Each week or cycle, conduct a “sprint review” that includes:
+- Reflection on completed vs. blocked tasks
+- Adjustment of goals and estimates
+- Updating the vault with relevant learnings
+- Redistributing calendar time
 
-No es un módulo, sino un hábito cíclico y sistemático.
+This is not a module—it’s a cyclical, systematic habit.
 
 ---
 
-## Licencia
+## License
 
-Este sistema es de uso libre bajo los términos de la **Licencia MIT**.
+This system is available under the terms of the **MIT License**.
 
+---
 
 ## Authors
 
 - [@leonardespi](https://www.github.com/leonardespi)
-
-
-
-
-
