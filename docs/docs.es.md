@@ -1,8 +1,6 @@
 # Sistema de Pensamiento y Acción (SPA)
 
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
+[![en](https://img.shields.io/badge/lang-en-informational?style=flat-square)](docs.md) [![es](https://img.shields.io/badge/lang-es-success?style=flat-square)](docs.es.md)
 
 ## Índice
 
@@ -179,7 +177,7 @@ Este sistema es de uso libre bajo los términos de la **Licencia MIT**.
 
 ## Authors
 
-- [@leonardespi](https://www.github.com/leonardespi)
+[![Contributors](https://img.shields.io/github/contributors-anon/leonardespi/spa?style=flat-square)](docs.es.md)  y tmbn [@leonardespi](https://www.github.com/leonardespi)  
 
 
 
