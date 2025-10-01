@@ -57,9 +57,9 @@ spa/
 > **Start here:** Edit `core.md` with your principles. Then create your first project in `projects/`.
 
 
-## Quickstart (60 seconds)
+## Quickstart 
 
-### Developers (Automated)
+### Developers (with cli)
 
 ```bash
 # 1) Clone
