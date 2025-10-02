@@ -21,14 +21,37 @@ SPA connects deep thinking, goal planning, and daily tasks in a **bidirectional 
 
 ---
 
-## Architecture at a Glance
+## Architecture
 
 ```mermaid
-flowchart LR
-  A["Deep Thinking<br/>(Notes, Principles)"] <--> B["Planning<br/>(Goals, Projects)"]
-  B <--> C["Execution<br/>(Tasks, Reviews)"]
-  C --> D["Feedback<br/>(Logs, Insights)"]
-  D --> A
+---
+config:
+  layout: dagre
+---
+flowchart TD
+ subgraph subGraph0[" "]
+        A["Cache Filter<br><i>Temporary Input</i>"]
+        B["Vault<br><i>Persistent Relational DB</i>"]
+        C["Tasks<br><i>Input/Output</i>"]
+        D["Calendar<br><i>Output Only</i>"]
+  end
+    ExternalInput["User input <br> <i>information</i>"] -- new information --> A
+    A -- important --> B
+    ExternalInput -- develop information --> B
+    D --> DailyRoutine["Daily Routine Output"]
+    A -- not important --> Discarded("Trash")
+    B -- project --> C
+    B -- habit --> D
+    C --> Discarded
+    ExternalInput -- develop task --> C
+    style A fill:#FFF9C4
+    style B fill:#E1BEE7
+    style C fill:#BBDEFB
+    style D fill:#C3F7F7
+    style ExternalInput fill:#C8E6C9
+    style DailyRoutine fill:#FFE0B2
+    style Discarded fill:#ffe6e6,stroke:#c00
+
 ```
 
 ---
