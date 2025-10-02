@@ -3,7 +3,7 @@
 > **A modular system to think clearly and execute reliably.**  
 SPA connects deep thinking, goal planning, and daily tasks in a **bidirectional loop** so insights turn into action — and action refines insight.
 
-[Docs (EN/ES)](docs/docs.md) · [Issues](https://github.com/leonardespi/spa/issues) · [Roadmap](#roadmap) · [Contributing](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md) · [License (MIT)](LICENSE)
+[Docs (EN/ES)](docs/docs.md) · [Issues](https://github.com/leonardespi/spa/issues) · [Contributing](information/CONTRIBUTING.md) · [Code of Conduct](information/CODE_OF_CONDUCT.md) · [License (MIT)](information/LICENSE)
 
 [![Last commit](https://img.shields.io/github/last-commit/leonardespi/spa?style=flat-square)](https://github.com/leonardespi/spa/commits)
 [![Issues](https://img.shields.io/github/issues/leonardespi/spa?style=flat-square)](https://github.com/leonardespi/spa/issues)
