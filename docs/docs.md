@@ -5,16 +5,15 @@
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Why use SPA?](#why-use-spa)
 3. [System Goal](#system-goal)
 4. [Audience](#audience)
 5. [Advantages & Benefits](#advantages--benefits)
 6. [Requirements & Tools](#requirements--tools)
-7. [High-level Architecture](#high-level-architecture)
+7. [Architecture](#architecture)
 8. [Basic Usage Example](#basic-usage-example)
 9. [Internal Conventions](#internal-conventions)
 10. [System Components](#system-components)
-11. [Workflow: How the system works end-to-end](#workflow-how-the-system-works-end-to-end)
+11. [Workflows](#workflows)
 12. [Review Process](#review-process)
 13. [License](#license)
 14. [Authors](#authors)
@@ -26,16 +25,6 @@
 The **System for Thought and Action (SPA)** is a modular architecture for personal organization that integrates knowledge management, goal planning, and task execution. Unlike other systems, SPA enables the creation of new knowledge by fusing and maturing ideas that come from different life areas.
 
 It is designed as a functional network of components that interact both hierarchically and bidirectionally—from deep thinking to everyday action—through a continuous process of iteration.
-
----
-
-## Why use SPA?
-
-- Connects what you know with what you do.
-- Organizes ideas, experiences, and learnings into a living network.
-- Translates knowledge into concrete goals and executable tasks.
-- Helps uncover relationships between seemingly unrelated areas.
-- Designed to be adapted, iterated on, and shared.
 
 ---
 
@@ -76,7 +65,7 @@ Other tools can be used if they provide equivalent functionality (graph view, Ka
 
 ---
 
-## High-level Architecture
+## Architecture
 
 SPA works as a layered architecture:
 
@@ -98,6 +87,38 @@ SPA works as a layered architecture:
    - Stores critical, frequently used information (staff, passwords, keys)  
    - Holds immature ideas before they enter the vault  
    - Translates key knowledge into quick‑action bullets
+
+```mermaid
+---
+config:
+  layout: dagre
+---
+flowchart TD
+ subgraph subGraph0[" "]
+        A["Cache Filter<br><i>Temporary Input</i>"]
+        B["Vault<br><i>Persistent Relational DB</i>"]
+        C["Tasks<br><i>Input/Output</i>"]
+        D["Calendar<br><i>Output Only</i>"]
+  end
+    ExternalInput["User input <br> <i>information</i>"] -- new information --> A
+    A -- important --> B
+    ExternalInput -- develop information --> B
+    D --> DailyRoutine["Daily Routine Output"]
+    A -- not important --> Discarded("Trash")
+    B -- project --> C
+    B -- habit --> D
+    C --> Discarded
+    ExternalInput -- develop task --> C
+    style A fill:#FFF9C4
+    style B fill:#E1BEE7
+    style C fill:#BBDEFB
+    style D fill:#C3F7F7
+    style ExternalInput fill:#C8E6C9
+    style DailyRoutine fill:#FFE0B2
+    style Discarded fill:#ffe6e6,stroke:#c00
+
+```
+
 
 ---
 
@@ -147,7 +168,7 @@ SPA works as a layered architecture:
 
 ---
 
-## Workflow: How the system works end-to-end
+## Workflows
 
 ```
 → Keep: quick capture of ideas →  
@@ -156,12 +177,103 @@ SPA works as a layered architecture:
 → Calendar: schedule those actions as time blocks →  
 ↻ Review: feed learnings back into the entire system.
 ```
+**Basic:**
+```mermaid
+flowchart LR
+  %% High-level SPA workflow
+  A[Keep<br/>Quick capture] --> B[Vault<br/>Organize & mature]
+  B --> C[Tasks<br/>Prioritize & estimate]
+  C --> D[Calendar<br/>Time-box & execute]
+  D --> E[Review<br/>Weekly/iterative]
+  E -- Learnings & outcomes --> B
+  E -- Habit tweaks --> D
+  E -- Backlog adjustments --> C
 
+```
+**Layered:**
+
+```mermaid
+flowchart TD
+  %% Layered, decisioned workflow
+  subgraph Inputs["Inputs / Events"]
+    U[User Input]
+  end
+
+  subgraph Keep["Keep (Fast memory / cache)"]
+    K[Capture note or snippet]
+    D1{Important?}
+  end
+
+  subgraph Vault["Vault (Knowledge)"]
+    V[Create/Link note<br/>Areas · Domains · Projects]
+    D2{Mature enough<br/>to act?}
+  end
+
+  subgraph Tasks["Tasks (Kanban)"]
+    TQ[Define goal → tasks<br/>S/M/L/XL estimates]
+    TC{Blocked?}
+    TB[Backlog / Blocked]
+    TI[In&nbsp;Progress]
+    TD[Done]
+  end
+
+  subgraph Calendar["Calendar (Planning)"]
+    C1[Create time blocks<br/>Habits · Deep work]
+    C2[Execute]
+  end
+
+  subgraph Review["Review (Sprint/Weekly)"]
+    R1[Reflect: done vs blocked]
+    R2[Adjust goals/estimates]
+    R3[Update vault with learnings]
+    R4[Redistribute time blocks]
+  end
+
+  %% Flows
+  U --> K --> D1
+  D1 -- "No" --> X1[Discard]
+  D1 -- "Yes" --> V
+
+  U -. existent project/idea .-> V
+
+  V --> D2
+  D2 -- "No" (keep maturing) --> V
+  D2 -- "Yes" --> TQ
+
+  TQ --> TC
+  TC -- "Yes" --> TB
+  TC -- "No"  --> TI --> TD --> R1
+
+  TQ --> C1
+  TI --> C1
+  C1 --> C2 --> R1
+
+  %% Review feedback loops
+  R1 --> R2 --> TQ
+  R1 --> R3 --> V
+  R2 --> R4 --> C1
+
+  %% Styling
+  classDef keep fill:#FFF9C4,stroke:#C9B458,color:#2b2b2b;
+  classDef vault fill:#E1BEE7,stroke:#8E24AA,color:#1f1f1f;
+  classDef tasks fill:#BBDEFB,stroke:#1976D2,color:#1f1f1f;
+  classDef cal fill:#C3F7F7,stroke:#00ACC1,color:#1f1f1f;
+  classDef review fill:#FFE0B2,stroke:#FB8C00,color:#1f1f1f;
+  classDef discard fill:#ffe6e6,stroke:#c00,color:#1f1f1f;
+
+  class K,D1 keep;
+  class V,D2 vault;
+  class TQ,TC,TB,TI,TD tasks;
+  class C1,C2 cal;
+  class R1,R2,R3,R4 review;
+  class X1 discard;
+
+```
 ---
 
 ## Review Process
 
-Each week or cycle, conduct a “sprint review” that includes:
+As shown in the layered architecture each week or cycle, a “sprint review” must be performed and include:
 - Reflection on completed vs. blocked tasks
 - Adjustment of goals and estimates
 - Updating the vault with relevant learnings
