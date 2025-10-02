@@ -62,6 +62,7 @@ General repo structure
 ```
 repo/
 ├─ docs/                   # en and es documentation on spa
+├─ scripts/                # install script for developers
 ├─ information/            # code of conduct, contributions, license
 ├─ spa/                    # Structure for manual install
 └─ README.md               # Summary
@@ -84,15 +85,20 @@ spa/
 
 ### Developers (with cli)
 
+*(The bash script will ask you some questions from the cli, you must answer them faithfully to generate a first version of your spa model)*
+
 ```bash
 # 1) Clone
 git clone https://github.com/leonardespi/spa.git && cd spa
 
-# 2) Open the docs
-# They will guide you to your first project and review cycle.
-```
+# 2) Execute the script
+ bash scripts/install.sh
+
+ ``
 
 ### Non-Developers (Manual)
+
+*(The non developer route is significantly more complex, you can download the repo as a zip and inside of spa there is an empty first version, check the docs to understand how to fill them)*
 
 1. **Download ZIP:** On the repo page, click **<> Code → Download ZIP**.
 2. **Unzip** anywhere you like.
