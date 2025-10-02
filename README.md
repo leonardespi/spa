@@ -94,7 +94,7 @@ git clone https://github.com/leonardespi/spa.git && cd spa
 # 2) Execute the script
  bash scripts/install.sh
 
- ``
+```
 
 ### Non-Developers (Manual)
 
