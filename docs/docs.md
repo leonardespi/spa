@@ -137,12 +137,21 @@ flowchart TD
 
 *Here it is a basic implementation of spa*
 
-![basic-spa-system](~/img/basicSPA.png)
+<img 
+  src="../img/basicSPA.png"
+  alt="basic-spa-system"
+  style="margin-right: 10px;" 
+  width="420"
+/>
 
 *An overview of how it looks a mature system, core is red, areas are green, domains are blue, and projects yellow*
 
-![mature-spa-system](~/img/matureSPA.png)
-
+<img 
+  src="../img/matureSPA.png"
+  alt="mature-spa-system"
+  style="margin-right: 10px;" 
+  width="420"
+/>
 
 ---
 
